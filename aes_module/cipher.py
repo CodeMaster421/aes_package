@@ -1,7 +1,7 @@
-from byte import Byte
-from word import Word
-from state import State
-from operations import shiftRows, add_roundkey, subbytes, mixcolumns, rotword, subword, inv_shiftRows, inv_subbytes, inv_mixcolumns
+from .byte import Byte
+from .word import Word
+from .state import State
+from .operations import shiftRows, add_roundkey, subbytes, mixcolumns, rotword, subword, inv_shiftRows, inv_subbytes, inv_mixcolumns
 
 def CIPHER(inp, Nr, w):
     state = inp
@@ -18,6 +18,7 @@ def CIPHER(inp, Nr, w):
     return state
 
 def KEYEXPANSION(key, Nk, Nr):
+    print(len(key), Nk)
     i = 0
     w = [-1]*(4*Nr + 4)
 
@@ -35,6 +36,7 @@ def KEYEXPANSION(key, Nk, Nr):
     ]
     
     while i <= Nk-1:
+        print(i, Nk)
         w[i] = Word(key[4 * i: 4 * i + 4])
         i = i + 1
     while i <= 4 * Nr + 3:

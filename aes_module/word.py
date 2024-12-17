@@ -1,4 +1,4 @@
-from byte import Byte
+from .byte import Byte
 
 class Word:
     def __init__(self, bytes):

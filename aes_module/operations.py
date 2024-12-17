@@ -1,6 +1,6 @@
-from byte import Byte
-from word import Word
-from state import State
+from .byte import Byte
+from .word import Word
+from .state import State
 from typing import List
 
 invmatch = [

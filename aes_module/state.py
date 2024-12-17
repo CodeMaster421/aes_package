@@ -1,5 +1,5 @@
-from byte import Byte
-from word import Word
+from .byte import Byte
+from .word import Word
 from typing import List
 
 class State:
