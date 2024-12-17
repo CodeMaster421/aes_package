@@ -1,0 +1,13 @@
+
+---
+
+### **4. Add a License**
+Choose a license for your project and create a `LICENSE` file in the root directory. For example, the MIT License:
+
+**Example `LICENSE`:**
+```plaintext
+MIT License
+
+Copyright (c) 2024 Your Name
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software...
