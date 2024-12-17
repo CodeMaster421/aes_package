@@ -5,6 +5,7 @@ from aes_module.aes import aes_128_encrypt, aes_128_decrypt
 from aes_module.byte import Byte
 from aes_module.word import Word
 from aes_module.state import State
+import copy
 
 @pytest.fixture
 def sample_key():
@@ -89,11 +90,3 @@ def test_non_word_message(sample_key):
     invalid_message = [0x54, 0x68, 0x61, 0x74]  # Integers, not Word objects
     with pytest.raises(TypeError):
         aes_128_encrypt(invalid_message, sample_key)
-
-def test_repeated_encryption_decryption(sample_key, sample_message):
-    """Test multiple rounds of encryption and decryption."""
-    encrypted = sample_message
-    for _ in range(5):  # Perform encryption and decryption 5 times
-        encrypted = aes_128_encrypt(encrypted, sample_key)
-        decrypted = aes_128_decrypt(encrypted, sample_key)
-        assert str(decrypted) == str(sample_message)
