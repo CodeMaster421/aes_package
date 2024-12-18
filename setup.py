@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="aes_package",
-    version="0.1",
+    version="0.2",
     packages=find_packages(),
     install_requires=[],
     description="A simple AES encryption and decryption module",
